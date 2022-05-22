@@ -1,0 +1,39 @@
+.footer-top {
+    background-color: #1A191D;
+}
+
+.footer-bottom {
+    background-color: #111013;
+}
+
+.single-footer h3 {
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.single-footer ul {
+    margin: 0;
+    padding: 0;
+}
+
+.single-footer ul li {
+    list-style: none;
+    margin: 6px 0;
+}
+
+.single-footer ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.single-footer ul li a:hover {
+    color: #cd0001;
+}
+
+@media (max-width: 991px) {
+    .single-footer {
+        margin-bottom: 50px;
+    }
+}

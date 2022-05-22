@@ -1,0 +1,24 @@
+.banner-area {
+    height: 700px;
+    background-size: cover;
+    background-position: center;
+}
+
+.banner-text h3 {
+    font-size: 36px;
+}
+
+.banner-text h4 {
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+@media (max-width: 991px) {
+    .banner-area {
+        height: 500px;
+    }
+
+    .banner-text h3 {
+        font-size: 28px;
+    }
+}

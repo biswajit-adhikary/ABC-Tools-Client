@@ -1,0 +1,17 @@
+.btn.theme-btn {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    border-radius: 0 !important;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 8px 20px;
+    min-width: 110px;
+}
+
+.btn.theme-btn:hover {
+    color: #fff;
+    background-color: #1A191D;
+    border-color: #1A191D;
+}
