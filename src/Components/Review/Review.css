@@ -1,0 +1,15 @@
+.single-review {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 0 50px 0 50px;
+    margin-bottom: 30px;
+}
+
+.single-review img {
+    margin-bottom: 20px;
+}
+
+.single-review h4 {
+    font-size: 15px;
+    text-transform: uppercase;
+}

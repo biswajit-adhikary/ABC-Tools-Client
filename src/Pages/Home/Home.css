@@ -1,0 +1,33 @@
+.section-heading {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-heading:after {
+    position: absolute;
+    content: "";
+    height: 3px;
+    width: 40px;
+    background-color: #dc3545;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-heading:before {
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 120px;
+    background-color: #999;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 8px;
+}
+
+.section-heading:after {
+    position: absolute;
+}
+
+.section-heading h3 {
+    font-size: 36px;
+}

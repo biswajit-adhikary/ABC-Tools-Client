@@ -30,9 +30,8 @@ const Footer = () => {
                             <div className="single-footer mb-0">
                                 <h3>Contact Us</h3>
                                 <ul>
-                                    <li><Link to="/">2390 NW 2nd Ave, Miami FL
-                                        33127, USA</Link></li>
-                                    <li><Link to="/">+0 755 332 322</Link></li>
+                                    <li><Link to="/">27 Nawabpur RD, Dhaka, Bangladesh.</Link></li>
+                                    <li><Link to="/">+0122 55 33 33</Link></li>
                                     <li><Link to="/">contact@example.com</Link></li>
                                 </ul>
                             </div>

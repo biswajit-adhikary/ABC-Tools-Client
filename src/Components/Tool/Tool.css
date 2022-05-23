@@ -1,0 +1,36 @@
+.single-tool {
+    border: 1px solid #ededed;
+    margin-bottom: 30px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.tool-image {
+    text-align: center;
+}
+
+.tool-image img {
+    width: 180px;
+    height: auto;
+}
+
+.tool-text h3 {
+    font-size: 22px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.tool-text h3:after {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 75px;
+    background-color: #dc3545;
+    left: 0;
+    bottom: 0;
+}
+
+.tool-text h5 {
+    font-size: 16px;
+}
