@@ -3,6 +3,8 @@
     padding: 40px;
     border-radius: 0 50px 0 50px;
     margin-bottom: 30px;
+    box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+    border: 1px solid #ededed;
 }
 
 .single-review img {

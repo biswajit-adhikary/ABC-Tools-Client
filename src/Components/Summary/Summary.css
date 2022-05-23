@@ -1,0 +1,25 @@
+.summary-area {
+    padding: 100px 0;
+}
+
+.single-summary {
+    padding: 40px 15px;
+    margin-bottom: 30px;
+    box-shadow: rgb(149 157 165 / 20%) 0px 5px 20px;
+    border: 1px solid #ededed;
+}
+
+.single-summary img {
+    height: 50px;
+}
+
+.single-summary h2 {
+    font-size: 40px;
+    margin-top: 20px;
+    font-weight: 700;
+}
+
+.single-summary h3 {
+    font-size: 18px;
+    text-transform: capitalize;
+}
