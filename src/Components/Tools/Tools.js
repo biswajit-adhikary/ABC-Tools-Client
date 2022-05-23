@@ -17,7 +17,7 @@ const Tools = () => {
     }
 
     return (
-        <section className='tools-area'>
+        <section className='tools-area bg-light'>
             <Container>
                 <Row>
                     <Col lg={{ span: 6, offset: 3 }}>

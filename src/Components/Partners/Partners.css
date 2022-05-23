@@ -1,0 +1,15 @@
+.partners-area {
+    padding-top: 100px;
+    padding-bottom: 70px;
+}
+
+.single-partner {
+    padding: 0 20px;
+    margin-bottom: 30px;
+}
+
+.single-partner img {
+    width: 100%;
+    padding: 30px;
+    border: 1px solid #ededed;
+}

@@ -1,0 +1,25 @@
+.about-area {
+    padding: 100px 0;
+}
+
+.about-image img {
+    width: 100%;
+}
+
+.about-text {
+    padding: 30px;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.about-text h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.about-text h4 {
+    font-size: 24px;
+}

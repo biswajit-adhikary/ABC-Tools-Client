@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 const Summary = () => {
     return (
-        <section className='summary-area'>
+        <section className='summary-area bg-white'>
             <Container>
                 <Row>
                     <Col lg={{ span: 6, offset: 3 }}>
@@ -54,7 +54,7 @@ const Summary = () => {
                         <div className="summary-contact text-center mt-5">
                             <h2>Have any other question about us?</h2>
                             <p>Fell free to contact us any time</p>
-                            <Link className='btn theme-btn' to="/">Learn More</Link>
+                            <Link className='btn theme-btn' to="/">Contact Us</Link>
                         </div>
                     </Col>
                 </Row>
