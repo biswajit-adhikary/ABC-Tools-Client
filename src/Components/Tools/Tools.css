@@ -2,3 +2,10 @@
     padding-top: 100px;
     padding-bottom: 70px;
 }
+
+@media (max-width: 991px) {
+    .tools-area {
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+}

@@ -23,3 +23,9 @@
     font-size: 18px;
     text-transform: capitalize;
 }
+
+@media (max-width: 991px) {
+    .summary-area {
+        padding: 60px 0;
+    }
+}

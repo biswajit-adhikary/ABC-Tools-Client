@@ -13,3 +13,10 @@
     padding: 30px;
     border: 1px solid #ededed;
 }
+
+@media (max-width: 991px) {
+    .partners-area {
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+}
