@@ -1,7 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import AddReview from './Components/AddReview/AddReview';
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
+import MyOrder from './Components/MyOrder/MyOrder';
+import MyProfile from './Components/MyProfile/MyProfile';
 import NotFound from './Components/NotFound/NotFound';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
 import About from './Pages/About/About';
@@ -33,7 +36,11 @@ function App() {
           <RequireAuth>
             <Dashboard />
           </RequireAuth>
-        } />
+        }>
+          <Route index element={<MyProfile />} />
+          <Route path="order" element={<MyOrder />} />
+          <Route path="add-review" element={<AddReview />} />
+        </Route>
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="forgot-password" element={<ForgotPassword />} />

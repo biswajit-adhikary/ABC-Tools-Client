@@ -36,6 +36,13 @@ const Header = () => {
                                 className={({ isActive }) => isActive ? "nav-link active-link" : "nav-link"} to="/contact">Contact
                             </NavLink>
                             {
+                                user &&
+                                <NavLink
+                                    className={({ isActive }) => isActive ? "nav-link active-link" : "nav-link"} to="/dashboard">Dashboard
+                                </NavLink>
+
+                            }
+                            {
                                 user
                                     ?
                                     <Button onClick={handleSignOut} variant="danger" className='theme-btn'>Sign Out</Button>

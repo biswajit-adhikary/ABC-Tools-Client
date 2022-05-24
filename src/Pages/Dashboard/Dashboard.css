@@ -1,0 +1,51 @@
+.dashboard-area {
+    padding: 45px 0;
+}
+
+.dashboard-area h2 {
+    font-size: 24px;
+}
+
+.dashboard-header a.nav-link {
+    margin: 0;
+    padding: 8px 25px !important;
+}
+
+.dashboard-header .navbar {
+    border: 1px solid #ccc;
+}
+
+.dashboard-header .me-auto.navbar-nav {
+    flex-direction: column;
+    width: 100%;
+}
+
+a.dash-link {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    width: 100% !important;
+    border: 1px solid #ccc;
+}
+
+a.dash-link:hover {
+    background: #333;
+    color: #fff;
+}
+
+.dashboard-content {
+    border-top: 2px solid #ccc;
+    padding-top: 10px;
+}
+
+@media (max-width: 991px) {
+    .dashboard-header button.navbar-toggler {
+        width: 100%;
+        text-align: left;
+        border-radius: 0;
+    }
+
+    a.dash-link {
+        border: 1px solid #ccc;
+    }
+}
