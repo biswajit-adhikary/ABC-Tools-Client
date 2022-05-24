@@ -11,6 +11,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import ForgotPassword from './Pages/ForgotPassword/ForgotPassword';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
+import Purchase from './Pages/Purchase/Purchase';
 import Register from './Pages/Register/Register';
 
 function App() {
@@ -23,6 +24,11 @@ function App() {
         <Route path="about" element={<About />} />
         <Route path="blog" element={<Blog />} />
         <Route path="contact" element={<Contact />} />
+        <Route path='/purchase/:toolId' element={
+          <RequireAuth>
+            <Purchase />
+          </RequireAuth>
+        }></Route>
         <Route path="dashboard" element={
           <RequireAuth>
             <Dashboard />
