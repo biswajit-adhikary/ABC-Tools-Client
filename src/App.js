@@ -7,6 +7,7 @@ import MyOrder from './Components/MyOrder/MyOrder';
 import MyProfile from './Components/MyProfile/MyProfile';
 import NotFound from './Components/NotFound/NotFound';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
+import Users from './Components/Users/Users';
 import About from './Pages/About/About';
 import Blog from './Pages/Blog/Blog';
 import Contact from './Pages/Contact/Contact';
@@ -40,6 +41,7 @@ function App() {
           <Route index element={<MyOrder />} />
           <Route path="add-review" element={<AddReview />} />
           <Route path="my-profile" element={<MyProfile />} />
+          <Route path="users" element={<Users />} />
         </Route>
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />

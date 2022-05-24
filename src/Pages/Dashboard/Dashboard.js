@@ -20,6 +20,7 @@ const Dashboard = () => {
                                         <Link className='dash-link' to="/dashboard">My Order</Link>
                                         <Link className='dash-link' to="/dashboard/add-review">Add A Review</Link>
                                         <Link className='dash-link' to="/dashboard/my-profile">My Profile</Link>
+                                        <Link className='dash-link' to="/dashboard/users">All Users</Link>
                                     </Nav>
                                 </Navbar.Collapse>
                             </Navbar>

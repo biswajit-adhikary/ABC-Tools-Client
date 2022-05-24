@@ -10,6 +10,7 @@ const MyOrder = () => {
     const [myOrders, setMyOrder] = useState([]);
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
+
     useEffect(() => {
         if (user) {
             fetch(`http://localhost:5000/my-orders?email=${user.email}`, {
@@ -28,10 +29,11 @@ const MyOrder = () => {
                 })
                 .then(data => setMyOrder(data))
         }
-    }, [user])
+    }, [user, navigate])
+
     return (
         <div className='order-area'>
-            <h2 className='py-2'>My order list:</h2>
+            <h2 className='py-2'>My Order List:</h2>
             <Table striped bordered>
                 <thead>
                     <tr>
