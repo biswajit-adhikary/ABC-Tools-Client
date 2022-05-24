@@ -1,0 +1,14 @@
+.separator {
+    display: flex;
+    align-items: center;
+}
+
+.separator div {
+    height: 1px;
+    width: 100%;
+    background: #bbb;
+}
+
+.separator span {
+    margin: 0 10px;
+}

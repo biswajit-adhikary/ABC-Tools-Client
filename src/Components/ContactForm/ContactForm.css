@@ -1,0 +1,23 @@
+.main-form-area {
+    padding: 100px 0;
+}
+
+.main-form {
+    padding: 50px;
+    border: 1px solid #eee;
+    box-shadow: rgb(149 157 165 / 20%) 0px 5px 20px;
+}
+
+@media (max-width: 991px) {
+    .main-form-area {
+        padding: 60px 0;
+    }
+
+    .main-form {
+        padding: 20px 15px;
+    }
+
+    .form-mata {
+        font-size: 13px;
+    }
+}

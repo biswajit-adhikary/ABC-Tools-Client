@@ -1,0 +1,13 @@
+.google-login img {
+    background-color: #fff;
+    padding: 3px;
+    border-radius: 50%;
+    height: 20px;
+    margin-right: 6px;
+}
+
+.google-login button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

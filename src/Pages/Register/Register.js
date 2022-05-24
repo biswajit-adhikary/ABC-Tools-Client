@@ -54,14 +54,14 @@ const Register = () => {
     }
 
     return (
-        <div className='form-area login-area text-center d-flex justify-content-center align-items-center'>
+        <div className='main-form-area bg-white'>
             <Container>
                 <Row>
                     <Col lg={{ span: 6, offset: 3 }}>
-                        <div className="form-main">
-                            <div className="form-area-text mb-4">
-                                <h3 className='theme-text-primary text-center '>Register</h3>
-                                <h4 className='theme-sub-text mt-3'>Please Register to continue using our website.</h4>
+                        <div className="main-form bg-light">
+                            <div className="section-heading text-center mb-5">
+                                <h3>Register</h3>
+                                <p>Please Register to continue using our website</p>
                             </div>
                             <form onSubmit={handleEmailRegister}>
                                 <Form.Control name="name" type="text" placeholder="Full Name" className='mb-3' required />
@@ -70,11 +70,11 @@ const Register = () => {
                                 <div className="form-mata d-flex justify-content-between">
                                     <p>Already have an account? <Link to="/login">Login</Link></p>
                                 </div>
-                                <Button className='w-100' type="submit" variant="outline-secondary">
+                                <Button className='w-100 theme-btn' type="submit" variant="danger">
                                     Register
                                 </Button>
                                 {errorMessage}
-                                <div className="separator">
+                                <div className="separator my-2">
                                     <div></div>
                                     <span>Or</span>
                                     <div></div>

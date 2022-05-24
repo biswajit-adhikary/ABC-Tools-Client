@@ -20,9 +20,9 @@ const Footer = () => {
                             <div className="single-footer">
                                 <h3>Quick Links</h3>
                                 <ul>
-                                    <li><Link to="/">Home</Link></li>
-                                    <li><Link to="/">Our Blog</Link></li>
-                                    <li><Link to="/">Contact Us</Link></li>
+                                    <li><Link to="/home">Home</Link></li>
+                                    <li><Link to="/blog">Our Blog</Link></li>
+                                    <li><Link to="/contact">Contact Us</Link></li>
                                 </ul>
                             </div>
                         </Col>

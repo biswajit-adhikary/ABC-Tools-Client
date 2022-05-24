@@ -6,6 +6,7 @@ import auth from '../../Firebase/Firebase.init';
 import Loading from '../Loading/Loading';
 import google from '../../Images/google.png';
 import useToken from '../../Hooks/useToken';
+import './GoogleLogin.css';
 
 
 const GoogleLogin = () => {
@@ -40,7 +41,7 @@ const GoogleLogin = () => {
 
     return (
         <div className='google-login'>
-            <Button onClick={() => signInWithGoogle()} className='w-100' variant="outline-secondary" type="submit">
+            <Button onClick={() => signInWithGoogle()} className='w-100 theme-btn' variant="danger" type="submit">
                 <img src={google} alt="" /> Continue With Google
             </Button>
             {errorMessage}

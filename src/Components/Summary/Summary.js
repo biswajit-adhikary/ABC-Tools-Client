@@ -54,7 +54,7 @@ const Summary = () => {
                         <div className="summary-contact text-center mt-5">
                             <h2>Have any other question about us?</h2>
                             <p>Fell free to contact us any time</p>
-                            <Link className='btn theme-btn' to="/">Contact Us</Link>
+                            <Link className='btn theme-btn' to="/contact">Contact Us</Link>
                         </div>
                     </Col>
                 </Row>

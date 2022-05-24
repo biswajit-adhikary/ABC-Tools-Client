@@ -13,7 +13,7 @@ const Banner = () => {
                         <div className="banner-text">
                             <h3 className='text-white'>We make quality tools</h3>
                             <h4 className='text-white my-4'>Last eight years our tool leads the Industry. We don't compromise the quality for our products. That's why we are the leader in the market.</h4>
-                            <Link className='btn theme-btn' to="/">Learn More</Link>
+                            <Link className='btn theme-btn' to="/contact">Contact Us</Link>
                         </div>
                     </Col>
                 </Row>

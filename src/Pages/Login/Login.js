@@ -6,6 +6,7 @@ import GoogleLogin from '../../Components/GoogleLogin/GoogleLogin';
 import Loading from '../../Components/Loading/Loading';
 import auth from '../../Firebase/Firebase.init';
 import useToken from '../../Hooks/useToken';
+import './Login.css';
 
 
 
@@ -53,14 +54,14 @@ const Login = () => {
     }
 
     return (
-        <div className='form-area login-area text-center d-flex justify-content-center align-items-center'>
+        <div className='main-form-area bg-white'>
             <Container>
                 <Row>
                     <Col lg={{ span: 6, offset: 3 }}>
-                        <div className="form-main">
-                            <div className="form-area-text mb-4">
-                                <h3 className='theme-text-primary text-center text-uppercase '>Log In</h3>
-                                <h4 className='theme-sub-text mt-3'>Please login to continue using our app.</h4>
+                        <div className="main-form bg-light">
+                            <div className="section-heading text-center mb-5">
+                                <h3>Log In</h3>
+                                <p>Please login to continue using our website</p>
                             </div>
                             <form onSubmit={handleEmailLogin}>
                                 <Form.Control name="email" type="email" placeholder="Email Address" className='mb-3' required />
@@ -69,11 +70,11 @@ const Login = () => {
                                     <p><Link to="/forgot-password">Forgot Password?</Link></p>
                                     <p>New User? <Link to="/register">Create Account</Link></p>
                                 </div>
-                                <Button className='w-100' type="submit" variant="outline-secondary">
+                                <Button className='w-100 theme-btn' type="submit" variant="danger">
                                     Login
                                 </Button>
                                 {errorMessage}
-                                <div className="separator">
+                                <div className="separator my-2">
                                     <div></div>
                                     <span>Or</span>
                                     <div></div>
