@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import './Purchase.css';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/Firebase.init';
+import { useForm } from 'react-hook-form';
 
 const Purchase = () => {
     const { toolId } = useParams();
@@ -25,6 +26,26 @@ const Purchase = () => {
     //     setTool(newTool);
     // }
 
+
+    // Add List
+    const { register, handleSubmit } = useForm();
+    const onSubmit = (data, event) => {
+        const url = `http://localhost:5000/order`;
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(result => {
+                // toast.success('Task Added!')
+                event.target.reset();
+                console.log(result);
+            })
+    };
+
     return (
         <section className='tool-details-area'>
             <Container>
@@ -45,10 +66,10 @@ const Purchase = () => {
                 <Row>
                     <Col lg={{ span: 6, offset: 3 }}>
                         <div className="order-form">
-                            <form>
-                                <input className='form-control mb-2' type="text" name="name" value={user.displayName} readOnly />
-                                <input className='form-control mb-2' type="email" name="email" value={user.email} readOnly />
-                                <input className='form-control btn theme-btn' type="submit" value="Order Now" />
+                            <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
+                                <input className='form-control mb-2' placeholder=' Name' value={user.displayName} readOnly type="text" {...register("name")} />
+                                <input className='form-control mb-2' placeholder=' Email' value={user.email} readOnly type="email" {...register("email")} />
+                                <input type="submit" className='' value="Place Order" />
                             </form>
                         </div>
                     </Col>

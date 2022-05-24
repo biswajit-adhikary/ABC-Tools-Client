@@ -34,8 +34,9 @@ a.dash-link:hover {
 }
 
 .dashboard-content {
-    border-top: 2px solid #ccc;
+    border-top: 1px solid #ddd;
     padding-top: 10px;
+    min-height: 475px;
 }
 
 @media (max-width: 991px) {

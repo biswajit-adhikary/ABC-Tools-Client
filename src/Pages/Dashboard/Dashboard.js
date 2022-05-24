@@ -17,9 +17,9 @@ const Dashboard = () => {
                                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                                 <Navbar.Collapse id="basic-navbar-nav">
                                     <Nav className="me-auto">
-                                        <Link className='dash-link' to="/dashboard">My Profile</Link>
-                                        <Link className='dash-link' to="/dashboard/order">My Orders</Link>
+                                        <Link className='dash-link' to="/dashboard">My Order</Link>
                                         <Link className='dash-link' to="/dashboard/add-review">Add A Review</Link>
+                                        <Link className='dash-link' to="/dashboard/my-profile">My Profile</Link>
                                     </Nav>
                                 </Navbar.Collapse>
                             </Navbar>
