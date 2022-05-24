@@ -32,7 +32,7 @@ const Footer = () => {
                                 <ul>
                                     <li><Link to="/">27 Nawabpur RD, Dhaka, Bangladesh.</Link></li>
                                     <li><Link to="/">+0122 55 33 33</Link></li>
-                                    <li><Link to="/">contact@example.com</Link></li>
+                                    <li><Link to="/">contact@abctools.com</Link></li>
                                 </ul>
                             </div>
                         </Col>

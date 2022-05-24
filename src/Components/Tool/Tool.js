@@ -15,7 +15,7 @@ const Tool = ({ tool }) => {
                     <h5>Available Quantity: {tool.availableQuantity}</h5>
                     <h5>Minimum Order Quantity: {tool.minimumOrderQuantity}</h5>
                     <h5>Price Per Unit : ${tool.pricePerUnit}</h5>
-                    <Button variant="danger" className='theme-btn mt-2'>Order Now</Button>
+                    <Button variant="danger" className='theme-btn mt-2'>Place order</Button>
                 </div>
             </div>
         </Col>

@@ -1,0 +1,30 @@
+.blog-area {
+    padding-top: 100px;
+    padding-bottom: 70px;
+}
+
+.single-blog {
+    margin-bottom: 30px;
+    border: 1px solid #eee;
+    box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+}
+
+.single-blog img {
+    width: 100%;
+}
+
+.blog-text h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.blog-text p {
+    margin-bottom: 0;
+}
+
+@media (max-width: 991px) {
+    .blog-area {
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+}

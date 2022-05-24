@@ -5,6 +5,7 @@ import Header from './Components/Header/Header';
 import NotFound from './Components/NotFound/NotFound';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
 import About from './Pages/About/About';
+import Blog from './Pages/Blog/Blog';
 import Contact from './Pages/Contact/Contact';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import ForgotPassword from './Pages/ForgotPassword/ForgotPassword';
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="home" element={<Home />} />
         <Route path="about" element={<About />} />
+        <Route path="blog" element={<Blog />} />
         <Route path="contact" element={<Contact />} />
         <Route path="dashboard" element={
           <RequireAuth>
