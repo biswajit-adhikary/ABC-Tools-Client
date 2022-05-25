@@ -7,6 +7,7 @@ import Header from './Components/Header/Header';
 import MyOrder from './Components/MyOrder/MyOrder';
 import MyProfile from './Components/MyProfile/MyProfile';
 import NotFound from './Components/NotFound/NotFound';
+import RequireAdmin from './Components/RequireAdmin/RequireAdmin';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
 import Users from './Components/Users/Users';
 import About from './Pages/About/About';
@@ -43,7 +44,11 @@ function App() {
           <Route index element={<MyOrder />} />
           <Route path="add-review" element={<AddReview />} />
           <Route path="my-profile" element={<MyProfile />} />
-          <Route path="users" element={<Users />} />
+          <Route path="users" element={
+            <RequireAdmin>
+              <Users />
+            </RequireAdmin>
+          } />
         </Route>
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />

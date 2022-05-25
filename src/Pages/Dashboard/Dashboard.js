@@ -1,9 +1,14 @@
 import React from 'react';
 import { Col, Container, Nav, Navbar, Row } from 'react-bootstrap';
 import { Link, Outlet } from 'react-router-dom';
+import useAdmin from '../../Hooks/useAdmin';
 import './Dashboard.css';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../Firebase/Firebase.init';
 
 const Dashboard = () => {
+    const [user] = useAuthState(auth);
+    const [admin] = useAdmin(user);
     return (
         <section className='dashboard-area'>
             <Container>
@@ -17,10 +22,10 @@ const Dashboard = () => {
                                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                                 <Navbar.Collapse id="basic-navbar-nav">
                                     <Nav className="me-auto">
-                                        <Link className='dash-link' to="/dashboard">My Order</Link>
-                                        <Link className='dash-link' to="/dashboard/add-review">Add A Review</Link>
+                                        {!admin && <Link className='dash-link' to="/dashboard">My Order</Link>}
+                                        {!admin && <Link className='dash-link' to="/dashboard/add-review">Add A Review</Link>}
                                         <Link className='dash-link' to="/dashboard/my-profile">My Profile</Link>
-                                        <Link className='dash-link' to="/dashboard/users">All Users</Link>
+                                        {admin && <Link className='dash-link' to="/dashboard/users">All Users</Link>}
                                     </Nav>
                                 </Navbar.Collapse>
                             </Navbar>

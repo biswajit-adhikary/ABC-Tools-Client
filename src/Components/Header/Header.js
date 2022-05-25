@@ -54,7 +54,7 @@ const Header = () => {
                             {
                                 user
                                     ?
-                                    <NavDropdown title={user.displayName.substring(0, 2)} id="basic-nav-dropdown">
+                                    <NavDropdown title={user.displayName.substring(0, 1)} id="basic-nav-dropdown">
                                         <NavDropdown.Item href="">Name: {user.displayName}</NavDropdown.Item>
                                         <NavDropdown.Item href="">Email: {user.email}</NavDropdown.Item>
                                     </NavDropdown>

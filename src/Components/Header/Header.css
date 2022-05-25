@@ -27,10 +27,7 @@
 }
 
 .header-nav a#basic-nav-dropdown::after {
-    position: absolute;
-    bottom: 3px;
-    color: #fff;
-    right: 25px;
+    display: none;
 }
 
 @media (max-width: 991px) {
