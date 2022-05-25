@@ -11,6 +11,19 @@
     padding: 15px;
 }
 
+.tool-details-text h2 {
+    font-size: 24px;
+}
+
+.tool-details-text h5 {
+    font-size: 18px;
+}
+
+p.error-text {
+    color: red;
+    font-size: 14px;
+}
+
 @media (max-width: 991px) {
     .tool-details-area {
         padding: 60px 0;

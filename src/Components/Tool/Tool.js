@@ -18,8 +18,8 @@ const Tool = ({ tool }) => {
                 <div className="tool-text p-2">
                     <h3>{name}</h3>
                     <p>{description}</p>
-                    <h5>Available Quantity: {availableQuantity}</h5>
                     <h5>Minimum Order Quantity: {minimumOrderQuantity}</h5>
+                    <h5>Available Quantity: {availableQuantity}</h5>
                     <h5>Price Per Unit : ${pricePerUnit}</h5>
                     <Button variant="danger" className='theme-btn mt-2' onClick={() => navigateToToolDetail(_id)}>Place order</Button>
                 </div>

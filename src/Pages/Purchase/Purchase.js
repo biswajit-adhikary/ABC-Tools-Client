@@ -62,26 +62,35 @@ const Purchase = () => {
             <Container>
                 <Row>
                     <Col lg={{ span: 6, offset: 3 }}>
-                        <div className="tool-details-image text-center">
-                            <img src={image} alt="" />
-                        </div>
-                        <div className="tool-details-text text-center">
-                            <h2>{name}</h2>
-                            <p>{description}</p>
-                            <h5>Available Quantity: {availableQuantity}</h5>
-                            <h5>Minimum Order Quantity: {minimumOrderQuantity}</h5>
-                            <h5>Price Per Unit : ${pricePerUnit}</h5>
+                        <div className="section-heading text-center mb-5">
+                            <h3>Your Name: {user.displayName}</h3>
+                            <p>Your Email: {user.email}</p>
                         </div>
                     </Col>
                 </Row>
                 <Row>
-                    <Col lg={{ span: 6, offset: 3 }}>
-                        <div className="order-form bg-light p-4">
+                    <Col lg={6}>
+                        <div className="tool-details bg-light p-4 h-100">
+                            <div className="tool-details-image text-center">
+                                <img src={image} alt="" />
+                            </div>
+                            <div className="tool-details-text text-center">
+                                <h2>Tool Name: {name}</h2>
+                                <p>Details: {description}</p>
+                                <h5>Minimum Order Quantity: {minimumOrderQuantity}</h5>
+                                <h5>Available Quantity: {availableQuantity}</h5>
+                                <h5>Price Per Unit : ${pricePerUnit}</h5>
+                            </div>
+                        </div>
+                    </Col>
+                    <Col lg={6}>
+                        <div className="order-form bg-light p-4 h-100">
                             <h3 className='text-center'>Order Now</h3>
                             <form onSubmit={handelOrder}>
                                 <div className="form-group">
                                     <label htmlFor="order">Order Quantity</label>
                                     <input name="orderQuantity" id="order" className='form-control mb-2' placeholder='Order Quantity' type="number" value={inputQuantity || ''} onChange={handelQuantityChange} />
+                                    {inputQuantity < minimumOrderQuantity || inputQuantity > availableQuantity ? <p className='error-text'>Minimum order quantity: {minimumOrderQuantity} and Maximum order quantity: {availableQuantity}</p> : ''}
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="name">Full Name</label>

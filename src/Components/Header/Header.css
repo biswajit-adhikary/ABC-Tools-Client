@@ -2,13 +2,13 @@
     border-bottom: 1px solid #eee;
 }
 
-a.nav-link {
+.header-nav a.nav-link {
     font-weight: 500;
     margin: 0 10px;
     text-transform: uppercase;
 }
 
-a.nav-link.active-link {
+.header-nav a.nav-link.active-link {
     color: #cd0001 !important;
 }
 
@@ -16,9 +16,30 @@ a.nav-link.active-link {
     margin-left: 10px;
 }
 
+.header-nav a#basic-nav-dropdown {
+    width: 40px;
+    height: 40px;
+    background: #777;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    margin-left: 15px;
+}
+
+.header-nav a#basic-nav-dropdown::after {
+    position: absolute;
+    bottom: 3px;
+    color: #fff;
+    right: 25px;
+}
+
 @media (max-width: 991px) {
     .navbar-nav .theme-btn {
         margin-right: 10px;
         margin-top: 8px;
+    }
+
+    .header-nav a#basic-nav-dropdown {
+        margin: 15px auto;
     }
 }

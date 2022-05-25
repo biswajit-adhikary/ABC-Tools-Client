@@ -1,6 +1,6 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
-import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink } from 'react-router-dom';
 import auth from '../../Firebase/Firebase.init';
@@ -15,7 +15,7 @@ const Header = () => {
     }
     return (
         <>
-            <Navbar bg="light" expand="lg" sticky="top" className='py-3'>
+            <Navbar bg="light" expand="lg" sticky="top" className='header-nav py-3'>
                 <Container>
                     <Navbar.Brand as={Link} to="/">
                         <img src={logo} alt="" />
@@ -50,6 +50,16 @@ const Header = () => {
                                     <NavLink
                                         className="btn theme-btn" to="/login">Log in
                                     </NavLink>
+                            }
+                            {
+                                user
+                                    ?
+                                    <NavDropdown title={user.displayName.substring(0, 2)} id="basic-nav-dropdown">
+                                        <NavDropdown.Item href="">Name: {user.displayName}</NavDropdown.Item>
+                                        <NavDropdown.Item href="">Email: {user.email}</NavDropdown.Item>
+                                    </NavDropdown>
+                                    :
+                                    ''
                             }
                         </Nav>
                     </Navbar.Collapse>
