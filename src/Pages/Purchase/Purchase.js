@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import './Purchase.css';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/Firebase.init';
+import toast from 'react-hot-toast';
 
 const Purchase = () => {
     const { toolId } = useParams();
@@ -31,12 +32,14 @@ const Purchase = () => {
     const handelOrder = event => {
         event.preventDefault();
         const orderQuantity = parseInt(event.target.orderQuantity.value);
+        const productId = tool._id;
+        const productName = tool.name;
         const name = event.target.name.value;
         const email = event.target.email.value;
         const address = event.target.address.value;
         const phone = event.target.phone.value;
         const price = orderQuantity * tool.pricePerUnit;
-        const data = { name, email, orderQuantity, price, address, phone };
+        const data = { name, email, productId, productName, orderQuantity, price, address, phone };
 
         // Send data to the server
         const url = `http://localhost:5000/order`;
@@ -49,9 +52,8 @@ const Purchase = () => {
         })
             .then(res => res.json())
             .then(result => {
-                // toast.success('Task Added!')
                 event.target.reset();
-                console.log(result);
+                toast.success('Order Placed Successfully!')
             })
     };
 
