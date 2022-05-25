@@ -28,7 +28,7 @@ const Reviews = () => {
                 </Row>
                 <Row>
                     {
-                        reviews.slice(0, 3).map(review => <Review
+                        reviews.map(review => <Review
                             key={review._id}
                             review={review}
                         ></Review>)

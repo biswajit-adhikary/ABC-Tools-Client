@@ -1,6 +1,6 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
-import { Table } from 'react-bootstrap';
+import { Button, Table } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../Firebase/Firebase.init';
@@ -37,10 +37,12 @@ const MyOrder = () => {
             <Table striped bordered>
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
+                        <th>S.N.</th>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Total Price</th>
+                        <th>Action</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,9 +50,11 @@ const MyOrder = () => {
                         myOrders.map(myOrder => <tr
                             key={myOrder._id}>
                             <td>1</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <td>{myOrder.productName}</td>
+                            <td>{myOrder.orderQuantity}</td>
+                            <td>{myOrder.price}</td>
+                            <td><Button>Action</Button></td>
+                            <td><Button>Action</Button></td>
                         </tr>)
                     }
                 </tbody>

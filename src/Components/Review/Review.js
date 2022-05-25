@@ -8,8 +8,8 @@ const Review = ({ review }) => {
         <Col lg={4}>
             <div className='single-review text-center'>
                 <img src={quotation} alt="" />
-                <p>{review.text}</p>
-                <p className='mb-1'><strong>Review: {review.start} Star</strong></p>
+                <p>{review.reviewText}</p>
+                <p className='mb-1'><strong>Review: {review.quantity} Star</strong></p>
                 <h4>Name: {review.name}</h4>
             </div>
         </Col>
