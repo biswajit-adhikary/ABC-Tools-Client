@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import auth from '../../Firebase/Firebase.init';
 
@@ -13,10 +14,10 @@ const ForgotPassword = () => {
         if (email) {
             await sendPasswordResetEmail(email);
             event.target.reset();
-            // toast('Email Send!');
+            toast.success('Email Send, Please Check Inbox!')
         }
         else {
-            // toast('Please enter email address!');
+            toast.error('Please enter email address!');
         }
     }
     return (
