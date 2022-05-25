@@ -13,7 +13,7 @@ const Dashboard = () => {
         <section className='dashboard-area'>
             <Container>
                 <Row>
-                    <h2 className='mb-4'>Welcome, Your Dashboard</h2>
+                    <h2 className='mb-4'>{user.displayName}, Welcome to Your Dashboard</h2>
                 </Row>
                 <Row>
                     <Col lg={3}>
@@ -25,7 +25,10 @@ const Dashboard = () => {
                                         <Link className='dash-link' to="/dashboard">My Profile</Link>
                                         {!admin && <Link className='dash-link' to="/dashboard/my-orders">My Order</Link>}
                                         {!admin && <Link className='dash-link' to="/dashboard/add-review">Add A Review</Link>}
-                                        {admin && <Link className='dash-link' to="/dashboard/users">All Users</Link>}
+                                        {admin && <Link className='dash-link' to="/dashboard/orders">Manage All Orders</Link>}
+                                        {admin && <Link className='dash-link' to="/dashboard/add-tools">Add A Tool</Link>}
+                                        {admin && <Link className='dash-link' to="/dashboard/manage-tools">Manage All Tools</Link>}
+                                        {admin && <Link className='dash-link' to="/dashboard/users">Make Admin</Link>}
                                     </Nav>
                                 </Navbar.Collapse>
                             </Navbar>

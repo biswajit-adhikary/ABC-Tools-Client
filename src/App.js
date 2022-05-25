@@ -1,12 +1,15 @@
 import { Toaster } from 'react-hot-toast';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import AddProduct from './Components/AddProduct/AddProduct';
 import AddReview from './Components/AddReview/AddReview';
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
+import ManageProduct from './Components/ManageProduct/ManageProduct';
 import MyOrder from './Components/MyOrder/MyOrder';
 import MyProfile from './Components/MyProfile/MyProfile';
 import NotFound from './Components/NotFound/NotFound';
+import Orders from './Components/Orders/Orders';
 import RequireAdmin from './Components/RequireAdmin/RequireAdmin';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
 import Users from './Components/Users/Users';
@@ -47,6 +50,21 @@ function App() {
           <Route path="users" element={
             <RequireAdmin>
               <Users />
+            </RequireAdmin>
+          } />
+          <Route path="orders" element={
+            <RequireAdmin>
+              <Orders />
+            </RequireAdmin>
+          } />
+          <Route path="add-tools" element={
+            <RequireAdmin>
+              <AddProduct />
+            </RequireAdmin>
+          } />
+          <Route path="manage-tools" element={
+            <RequireAdmin>
+              <ManageProduct />
             </RequireAdmin>
           } />
         </Route>
