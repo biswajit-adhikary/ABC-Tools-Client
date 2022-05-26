@@ -9,10 +9,10 @@ const AddProduct = () => {
         const name = event.target.name.value;
         const image = event.target.image.value;
         const description = event.target.description.value;
-        const minimumOrderQuantity = event.target.minimumOrderQuantity.value;
-        const availableQuantity = event.target.availableQuantity.value;
-        const pricePerUnit = event.target.pricePerUnit.value;
-        const inputQuantity = event.target.minimumOrderQuantity.value;
+        const minimumOrderQuantity = parseInt(event.target.minimumOrderQuantity.value);
+        const availableQuantity = parseInt(event.target.availableQuantity.value);
+        const pricePerUnit = parseInt(event.target.pricePerUnit.value);
+        const inputQuantity = parseInt(event.target.minimumOrderQuantity.value);
         const data = { name, image, description, minimumOrderQuantity, availableQuantity, pricePerUnit, inputQuantity };
 
         // Send data to the server
