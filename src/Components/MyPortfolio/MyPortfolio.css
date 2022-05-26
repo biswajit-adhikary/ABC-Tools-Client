@@ -1,0 +1,22 @@
+.portfolio-section {
+    padding: 60px 0;
+}
+
+.personal-information h2 {
+    font-size: 28px;
+}
+
+.personal-information h3 {
+    font-size: 18px;
+}
+
+.personal-information ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.personal-information ul li a:hover {
+    color: brown;
+}

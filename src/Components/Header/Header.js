@@ -27,13 +27,13 @@ const Header = () => {
                                 className={({ isActive }) => isActive ? "nav-link active-link" : "nav-link"} to="/">Home
                             </NavLink>
                             <NavLink
-                                className={({ isActive }) => isActive ? "nav-link active-link" : "nav-link"} to="/about">About
-                            </NavLink>
-                            <NavLink
                                 className={({ isActive }) => isActive ? "nav-link active-link" : "nav-link"} to="/blog">Blog
                             </NavLink>
                             <NavLink
                                 className={({ isActive }) => isActive ? "nav-link active-link" : "nav-link"} to="/contact">Contact
+                            </NavLink>
+                            <NavLink
+                                className={({ isActive }) => isActive ? "nav-link active-link" : "nav-link"} to="/my-portfolio">My Portfolio
                             </NavLink>
                             {
                                 user &&

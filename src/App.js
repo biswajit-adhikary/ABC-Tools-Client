@@ -7,6 +7,7 @@ import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import ManageProduct from './Components/ManageProduct/ManageProduct';
 import MyOrder from './Components/MyOrder/MyOrder';
+import MyPortfolio from './Components/MyPortfolio/MyPortfolio';
 import MyProfile from './Components/MyProfile/MyProfile';
 import NotFound from './Components/NotFound/NotFound';
 import Orders from './Components/Orders/Orders';
@@ -35,6 +36,7 @@ function App() {
         <Route path="about" element={<About />} />
         <Route path="blog" element={<Blog />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="my-portfolio" element={<MyPortfolio />} />
         <Route path='/purchase/:toolId' element={
           <RequireAuth>
             <Purchase />

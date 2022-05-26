@@ -1,3 +1,33 @@
+## Website Name: ABC TOOLS
+### Live Website Link: [ABC TOOLS](https://abc-tools-87153.web.app/)
+
+Features and Functionality:
+---------------------------
+* This is a tool manufacturer company website.
+* People can order their tools here.
+* For creating order, they need to create an account.
+* They create account using email & password or Google.
+* After order they can cancel the order.
+* They can pay using stripe card payment.
+* Admin can see the orders form the dashboard.
+* User can add review from their dashboard.
+* Admin can manage order, users from the back end.
+
+Technologies I use:
+-------------------
+* React
+* Firebase
+* React Router
+* React Firebase Hooks
+* React Bootstrap
+* React Hot Toasts
+* NodeJS
+* Express
+* MongoDB
+* React Query
+
+--------------------
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
