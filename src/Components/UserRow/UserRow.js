@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import toast from 'react-hot-toast';
 
-const UserRow = ({ user, refetch }) => {
+const UserRow = ({ user, index, refetch }) => {
     const { email, role } = user;
 
 
@@ -28,7 +28,7 @@ const UserRow = ({ user, refetch }) => {
     }
     return (
         <tr>
-            <td>1</td>
+            <td>{index + 1}</td>
             <td>{email}</td>
             <td>
                 {role !== 'admin' && <Button onClick={makeAdmin} variant="primary">Make Admin</Button>}

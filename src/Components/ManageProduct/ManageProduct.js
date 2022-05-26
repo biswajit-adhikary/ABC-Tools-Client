@@ -29,9 +29,9 @@ const ManageProduct = () => {
                 </thead>
                 <tbody>
                     {
-                        tools.map(tool => <tr
+                        tools.map((tool, index) => <tr
                             key={tool._id}>
-                            <td>1</td>
+                            <td>{index + 1}</td>
                             <td>{tool.name}</td>
                             <td>{tool.availableQuantity}</td>
                             <td>{tool.pricePerUnit}</td>

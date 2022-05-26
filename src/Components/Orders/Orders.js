@@ -30,9 +30,9 @@ const Orders = () => {
                 </thead>
                 <tbody>
                     {
-                        orders.map(order => <tr
+                        orders.map((order, index) => <tr
                             key={order._id}>
-                            <td>1</td>
+                            <td>{index + 1}</td>
                             <td>{order.productName}</td>
                             <td>{order.name}</td>
                             <td>{order.orderQuantity}</td>
