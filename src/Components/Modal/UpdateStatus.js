@@ -6,7 +6,7 @@ const UpdateStatus = ({ order, refetch }) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleUpdate = () => {
-        const url = `http://localhost:5000/dashboard/order/${order._id}`;
+        const url = `https://quiet-shelf-73274.herokuapp.com/dashboard/order/${order._id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

@@ -6,7 +6,7 @@ const DeleteModal = ({ tool, refetch }) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleDelete = () => {
-        const url = `http://localhost:5000/tools/${tool._id}`;
+        const url = `https://quiet-shelf-73274.herokuapp.com/tools/${tool._id}`;
         fetch(url, {
             method: 'DELETE',
             headers: {

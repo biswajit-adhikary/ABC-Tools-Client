@@ -7,7 +7,7 @@ import './Tools.css';
 
 const Tools = () => {
     const { data: tools, isLoading } = useQuery('toolsData', () =>
-        fetch('http://localhost:5000/tools').then(res =>
+        fetch('https://quiet-shelf-73274.herokuapp.com/tools').then(res =>
             res.json()
         )
     )

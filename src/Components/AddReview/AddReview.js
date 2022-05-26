@@ -11,7 +11,7 @@ const AddReview = () => {
     // Add Review
     const { register, handleSubmit } = useForm();
     const onSubmit = (data, event) => {
-        const url = `http://localhost:5000/reviews`;
+        const url = `https://quiet-shelf-73274.herokuapp.com/reviews`;
         fetch(url, {
             method: 'POST',
             headers: {

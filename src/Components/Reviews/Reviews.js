@@ -7,7 +7,7 @@ import './Reviews.css';
 
 const Reviews = () => {
     const { data: reviews, isLoading } = useQuery('reviewData', () =>
-        fetch('http://localhost:5000/reviews').then(res =>
+        fetch('https://quiet-shelf-73274.herokuapp.com/reviews').then(res =>
             res.json()
         )
     )

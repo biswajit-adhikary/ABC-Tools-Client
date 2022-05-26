@@ -6,7 +6,7 @@ const DeleteMyOrder = ({ myOrder, refetch }) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleDelete = () => {
-        const url = `http://localhost:5000/orders/${myOrder._id}`;
+        const url = `https://quiet-shelf-73274.herokuapp.com/orders/${myOrder._id}`;
         fetch(url, {
             method: 'DELETE',
             headers: {

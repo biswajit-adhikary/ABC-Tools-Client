@@ -9,7 +9,7 @@ import './MyProfile.css';
 const MyProfile = () => {
     const [user] = useAuthState(auth);
 
-    const { data: singleUser, isLoading, refetch } = useQuery('singleUser', () => fetch(`http://localhost:5000/user/${user.email}`, {
+    const { data: singleUser, isLoading, refetch } = useQuery('singleUser', () => fetch(`https://quiet-shelf-73274.herokuapp.com/user/${user.email}`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -32,7 +32,7 @@ const MyProfile = () => {
         const data = { name, email, education, location, phone, linkedIn };
 
         // Send data to the server
-        const url = `http://localhost:5000/user/${email}`;
+        const url = `https://quiet-shelf-73274.herokuapp.com/user/${email}`;
         fetch(url, {
             method: 'PUT',
             headers: {

@@ -6,7 +6,7 @@ const DeleteAdminOrder = ({ order, refetch }) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleDelete = () => {
-        const url = `http://localhost:5000/orders/${order._id}`;
+        const url = `https://quiet-shelf-73274.herokuapp.com/orders/${order._id}`;
         fetch(url, {
             method: 'DELETE',
             headers: {

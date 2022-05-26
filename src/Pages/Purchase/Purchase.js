@@ -12,7 +12,7 @@ const Purchase = () => {
 
     const [tool, setTool] = useState({});
     useEffect(() => {
-        const url = `http://localhost:5000/tool/${toolId}`;
+        const url = `https://quiet-shelf-73274.herokuapp.com/tool/${toolId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setTool(data));
@@ -42,7 +42,7 @@ const Purchase = () => {
         const data = { name, email, productId, productName, orderQuantity, price, address, phone };
 
         // Send data to the server
-        const url = `http://localhost:5000/order`;
+        const url = `https://quiet-shelf-73274.herokuapp.com/order`;
         fetch(url, {
             method: 'POST',
             headers: {

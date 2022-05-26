@@ -7,7 +7,7 @@ import UpdateStatus from '../Modal/UpdateStatus';
 
 const Orders = () => {
     const { data: orders, isLoading, refetch } = useQuery('orders', () =>
-        fetch(`http://localhost:5000/orders`, {
+        fetch(`https://quiet-shelf-73274.herokuapp.com/orders`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

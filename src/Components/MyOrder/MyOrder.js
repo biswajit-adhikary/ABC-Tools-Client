@@ -11,7 +11,7 @@ import './MyOrder.css';
 const MyOrder = () => {
     const [user] = useAuthState(auth);
     const { data: myOrders, isLoading, refetch } = useQuery('myOrders', () =>
-        fetch(`http://localhost:5000/my-orders?email=${user.email}`, {
+        fetch(`https://quiet-shelf-73274.herokuapp.com/my-orders?email=${user.email}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

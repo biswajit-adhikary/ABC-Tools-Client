@@ -11,7 +11,7 @@ const stripePromise = loadStripe('pk_test_51L3bZGLoyC8ksBdYuhRk7bPNFEBBroi7Lp8xE
 
 const Payment = () => {
     const { id } = useParams();
-    const url = `http://localhost:5000/orders/${id}`;
+    const url = `https://quiet-shelf-73274.herokuapp.com/orders/${id}`;
     const { data: orderPay, isLoading } = useQuery(['orderPay', id], () =>
         fetch(url, {
             method: 'GET',

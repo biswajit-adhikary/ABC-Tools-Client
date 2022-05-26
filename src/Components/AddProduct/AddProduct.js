@@ -16,7 +16,7 @@ const AddProduct = () => {
         const data = { name, image, description, minimumOrderQuantity, availableQuantity, pricePerUnit, inputQuantity };
 
         // Send data to the server
-        const url = `http://localhost:5000/tools`;
+        const url = `https://quiet-shelf-73274.herokuapp.com/tools`;
         fetch(url, {
             method: 'POST',
             headers: {
