@@ -15,29 +15,31 @@ const Users = () => {
         return <Loading></Loading>
     }
     return (
-        <div>
+        <>
             <h2>All Users List:</h2>
-            <Table striped bordered>
-                <thead>
-                    <tr>
-                        <th>S.N</th>
-                        <th>Email Address</th>
-                        <th>Action</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        users.map((user, index) => <UserRow
-                            key={user._id}
-                            user={user}
-                            refetch={refetch}
-                            index={index}
-                        ></UserRow>)
-                    }
-                </tbody>
-            </Table>
-        </div>
+            <div className="table-div">
+                <Table striped bordered>
+                    <thead>
+                        <tr>
+                            <th>S.N</th>
+                            <th>Email Address</th>
+                            <th>Action</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            users.map((user, index) => <UserRow
+                                key={user._id}
+                                user={user}
+                                refetch={refetch}
+                                index={index}
+                            ></UserRow>)
+                        }
+                    </tbody>
+                </Table>
+            </div>
+        </>
     );
 };
 

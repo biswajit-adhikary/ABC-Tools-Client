@@ -17,32 +17,34 @@ const ManageProduct = () => {
     return (
         <div>
             <h2>Manage All Tools:</h2>
-            <Table striped bordered>
-                <thead>
-                    <tr>
-                        <th>S.N.</th>
-                        <th>Tools Name</th>
-                        <th>Available Quantity</th>
-                        <th>Price Per Unit</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        tools.map((tool, index) => <tr
-                            key={tool._id}>
-                            <td>{index + 1}</td>
-                            <td>{tool.name}</td>
-                            <td>{tool.availableQuantity}</td>
-                            <td>{tool.pricePerUnit}</td>
-                            <td><DeleteModal
-                                tool={tool}
-                                refetch={refetch}
-                            ></DeleteModal></td>
-                        </tr>)
-                    }
-                </tbody>
-            </Table>
+            <div className="table-div">
+                <Table striped bordered>
+                    <thead>
+                        <tr>
+                            <th>S.N.</th>
+                            <th>Tools Name</th>
+                            <th>Available Quantity</th>
+                            <th>Price Per Unit</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            tools.map((tool, index) => <tr
+                                key={tool._id}>
+                                <td>{index + 1}</td>
+                                <td>{tool.name}</td>
+                                <td>{tool.availableQuantity}</td>
+                                <td>{tool.pricePerUnit}</td>
+                                <td><DeleteModal
+                                    tool={tool}
+                                    refetch={refetch}
+                                ></DeleteModal></td>
+                            </tr>)
+                        }
+                    </tbody>
+                </Table>
+            </div>
         </div>
     );
 };

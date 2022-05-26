@@ -24,45 +24,47 @@ const Orders = () => {
     return (
         <div>
             <h2>Manage All Orders:</h2>
-            <Table striped bordered>
-                <thead>
-                    <tr>
-                        <th>S.N.</th>
-                        <th>Product Name</th>
-                        <th>Person</th>
-                        <th>Quantity</th>
-                        <th>Total Price</th>
-                        <th>Payment</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        orders.map((order, index) => <tr
-                            key={order._id}>
-                            <td>{index + 1}</td>
-                            <td>{order.productName}</td>
-                            <td>{order.name}</td>
-                            <td>{order.orderQuantity}</td>
-                            <td>{order.price}</td>
-                            <td>
-                                {!order.paid && <span>Unpaid</span>}
-                                {order.paid && <span>Paid</span>}
-                            </td>
-                            <td>{order.status}</td>
-                            <td>{order.paid && <UpdateStatus
-                                order={order}
-                                refetch={refetch}
-                            ></UpdateStatus>}
-                                {!order.paid && <DeleteAdminOrder
+            <div className="table-div">
+                <Table striped bordered>
+                    <thead>
+                        <tr>
+                            <th>S.N.</th>
+                            <th>Product Name</th>
+                            <th>Person</th>
+                            <th>Quantity</th>
+                            <th>Total Price</th>
+                            <th>Payment</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            orders.map((order, index) => <tr
+                                key={order._id}>
+                                <td>{index + 1}</td>
+                                <td>{order.productName}</td>
+                                <td>{order.name}</td>
+                                <td>{order.orderQuantity}</td>
+                                <td>{order.price}</td>
+                                <td>
+                                    {!order.paid && <span>Unpaid</span>}
+                                    {order.paid && <span>Paid</span>}
+                                </td>
+                                <td>{order.status}</td>
+                                <td>{order.paid && <UpdateStatus
                                     order={order}
                                     refetch={refetch}
-                                ></DeleteAdminOrder>}</td>
-                        </tr>)
-                    }
-                </tbody>
-            </Table>
+                                ></UpdateStatus>}
+                                    {!order.paid && <DeleteAdminOrder
+                                        order={order}
+                                        refetch={refetch}
+                                    ></DeleteAdminOrder>}</td>
+                            </tr>)
+                        }
+                    </tbody>
+                </Table>
+            </div>
         </div>
     );
 };

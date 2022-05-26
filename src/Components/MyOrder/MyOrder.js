@@ -28,40 +28,42 @@ const MyOrder = () => {
     return (
         <div className='order-area'>
             <h2 className='py-2'>My Order List:</h2>
-            <Table striped bordered>
-                <thead>
-                    <tr>
-                        <th>S.N.</th>
-                        <th>Product Name</th>
-                        <th>Quantity</th>
-                        <th>Total Price</th>
-                        <th>Payment Status</th>
-                        <th>Order Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        myOrders.map((myOrder, index) => <tr
-                            key={myOrder._id}>
-                            <td>{index + 1}</td>
-                            <td>{myOrder.productName}</td>
-                            <td>{myOrder.orderQuantity}</td>
-                            <td>${myOrder.price}</td>
-                            <td>
-                                {(myOrder.price && !myOrder.paid) && <Link to={`/dashboard/payment/${myOrder._id}`}><Button size="sm">Pay Now</Button></Link>}
-                                {(myOrder.price && myOrder.paid) && <span className='text-success'>Paid (Transaction ID: {myOrder.transactionId})</span>}
-                            </td>
-                            <td>
-                                {!myOrder.paid && <DeleteMyOrder
-                                    myOrder={myOrder}
-                                    refetch={refetch}
-                                ></DeleteMyOrder>}
-                                {myOrder.paid && <span className='text-success'>Order Placed</span>}
-                            </td>
-                        </tr>)
-                    }
-                </tbody>
-            </Table>
+            <div className="table-div">
+                <Table striped bordered>
+                    <thead>
+                        <tr>
+                            <th>S.N.</th>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Total Price</th>
+                            <th>Payment Status</th>
+                            <th>Order Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            myOrders.map((myOrder, index) => <tr
+                                key={myOrder._id}>
+                                <td>{index + 1}</td>
+                                <td>{myOrder.productName}</td>
+                                <td>{myOrder.orderQuantity}</td>
+                                <td>${myOrder.price}</td>
+                                <td>
+                                    {(myOrder.price && !myOrder.paid) && <Link to={`/dashboard/payment/${myOrder._id}`}><Button size="sm">Pay Now</Button></Link>}
+                                    {(myOrder.price && myOrder.paid) && <span className='text-success'>Paid (Transaction ID: {myOrder.transactionId})</span>}
+                                </td>
+                                <td>
+                                    {!myOrder.paid && <DeleteMyOrder
+                                        myOrder={myOrder}
+                                        refetch={refetch}
+                                    ></DeleteMyOrder>}
+                                    {myOrder.paid && <span className='text-success'>Order Placed</span>}
+                                </td>
+                            </tr>)
+                        }
+                    </tbody>
+                </Table>
+            </div>
         </div>
     );
 };

@@ -39,6 +39,10 @@ a.dash-link:hover {
     min-height: 475px;
 }
 
+.table-div {
+    overflow-x: auto !important;
+}
+
 @media (max-width: 991px) {
     .dashboard-header button.navbar-toggler {
         width: 100%;
