@@ -1,35 +1,48 @@
-import { signOut } from 'firebase/auth';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Button, Table } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { useQuery } from 'react-query';
 import auth from '../../Firebase/Firebase.init';
+import Loading from '../Loading/Loading';
+import DeleteMyOrder from '../Modal/DeleteMyOrders';
 import './MyOrder.css';
 
 const MyOrder = () => {
-    const [myOrders, setMyOrder] = useState([]);
     const [user] = useAuthState(auth);
-    const navigate = useNavigate();
+    // useEffect(() => {
+    //     if (user) {
+    //         fetch(`http://localhost:5000/my-orders?email=${user.email}`, {
+    //             method: 'GET',
+    //             headers: {
+    //                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+    //             }
+    //         })
+    //             .then(res => {
+    //                 if (res.status === 401 || res.status === 403) {
+    //                     signOut(auth);
+    //                     localStorage.removeItem('accessToken');
+    //                     navigate('/login');
+    //                 }
+    //                 return res.json()
+    //             })
+    //             .then(data => setMyOrder(data))
+    //     }
+    // }, [user, navigate])
 
-    useEffect(() => {
-        if (user) {
-            fetch(`http://localhost:5000/my-orders?email=${user.email}`, {
-                method: 'GET',
-                headers: {
-                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-                }
-            })
-                .then(res => {
-                    if (res.status === 401 || res.status === 403) {
-                        signOut(auth);
-                        localStorage.removeItem('accessToken');
-                        navigate('/login');
-                    }
-                    return res.json()
-                })
-                .then(data => setMyOrder(data))
-        }
-    }, [user, navigate])
+    const { data: myOrders, isLoading, refetch } = useQuery('myOrders', () =>
+        fetch(`http://localhost:5000/my-orders?email=${user.email}`, {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        }).then(res =>
+            res.json()
+        )
+    )
+
+    if (isLoading) {
+        return <Loading />
+    }
 
     return (
         <div className='order-area'>
@@ -54,7 +67,10 @@ const MyOrder = () => {
                             <td>{myOrder.orderQuantity}</td>
                             <td>{myOrder.price}</td>
                             <td><Button>Action</Button></td>
-                            <td><Button>Action</Button></td>
+                            <td><DeleteMyOrder
+                                myOrder={myOrder}
+                                refetch={refetch}
+                            ></DeleteMyOrder></td>
                         </tr>)
                     }
                 </tbody>
