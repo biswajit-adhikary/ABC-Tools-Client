@@ -1,18 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Button, Table } from 'react-bootstrap';
+import { useQuery } from 'react-query';
+import Loading from '../Loading/Loading';
+import DeleteAdminOrder from '../Modal/DeleteAdminOrder';
+import UpdateStatus from '../Modal/UpdateStatus';
 
 const Orders = () => {
-    const [orders, setOrders] = useState([]);
-    useEffect(() => {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () =>
         fetch(`http://localhost:5000/orders`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             }
-        })
-            .then(res => res.json())
-            .then(data => setOrders(data))
-    }, [])
+        }).then(res =>
+            res.json()
+        )
+    )
+
+    if (isLoading) {
+        return <Loading />
+    }
+
+    const handelStatus = event => {
+        event.preventDefault();
+
+    }
+
+
+
     return (
         <div>
             <h2>Manage All Orders:</h2>
@@ -24,7 +39,8 @@ const Orders = () => {
                         <th>Person</th>
                         <th>Quantity</th>
                         <th>Total Price</th>
-                        <th>Action</th>
+                        <th>Payment</th>
+                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -37,8 +53,19 @@ const Orders = () => {
                             <td>{order.name}</td>
                             <td>{order.orderQuantity}</td>
                             <td>{order.price}</td>
-                            <td><Button>Action</Button></td>
-                            <td><Button>Action</Button></td>
+                            <td>
+                                {!order.paid && <span>Unpaid</span>}
+                                {order.paid && <span>Paid</span>}
+                            </td>
+                            <td>{order.status}</td>
+                            <td>{order.paid && <UpdateStatus
+                                order={order}
+                                refetch={refetch}
+                            ></UpdateStatus>}
+                                {!order.paid && <DeleteAdminOrder
+                                    order={order}
+                                    refetch={refetch}
+                                ></DeleteAdminOrder>}</td>
                         </tr>)
                     }
                 </tbody>
