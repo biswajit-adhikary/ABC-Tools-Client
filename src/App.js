@@ -10,6 +10,7 @@ import MyOrder from './Components/MyOrder/MyOrder';
 import MyProfile from './Components/MyProfile/MyProfile';
 import NotFound from './Components/NotFound/NotFound';
 import Orders from './Components/Orders/Orders';
+import Payment from './Components/Payment/Payment';
 import RequireAdmin from './Components/RequireAdmin/RequireAdmin';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
 import Users from './Components/Users/Users';
@@ -47,6 +48,7 @@ function App() {
           <Route index element={<MyProfile />} />
           <Route path="my-orders" element={<MyOrder />} />
           <Route path="add-review" element={<AddReview />} />
+          <Route path="payment/:id" element={<Payment />} />
           <Route path="users" element={
             <RequireAdmin>
               <Users />

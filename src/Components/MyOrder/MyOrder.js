@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Table } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
+import { Link } from 'react-router-dom';
 import auth from '../../Firebase/Firebase.init';
 import Loading from '../Loading/Loading';
 import DeleteMyOrder from '../Modal/DeleteMyOrders';
@@ -9,26 +10,6 @@ import './MyOrder.css';
 
 const MyOrder = () => {
     const [user] = useAuthState(auth);
-    // useEffect(() => {
-    //     if (user) {
-    //         fetch(`http://localhost:5000/my-orders?email=${user.email}`, {
-    //             method: 'GET',
-    //             headers: {
-    //                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-    //             }
-    //         })
-    //             .then(res => {
-    //                 if (res.status === 401 || res.status === 403) {
-    //                     signOut(auth);
-    //                     localStorage.removeItem('accessToken');
-    //                     navigate('/login');
-    //                 }
-    //                 return res.json()
-    //             })
-    //             .then(data => setMyOrder(data))
-    //     }
-    // }, [user, navigate])
-
     const { data: myOrders, isLoading, refetch } = useQuery('myOrders', () =>
         fetch(`http://localhost:5000/my-orders?email=${user.email}`, {
             method: 'GET',
@@ -60,17 +41,23 @@ const MyOrder = () => {
                 </thead>
                 <tbody>
                     {
-                        myOrders.map(myOrder => <tr
+                        myOrders.map((myOrder, index) => <tr
                             key={myOrder._id}>
-                            <td>1</td>
+                            <td>{index + 1}</td>
                             <td>{myOrder.productName}</td>
                             <td>{myOrder.orderQuantity}</td>
-                            <td>{myOrder.price}</td>
-                            <td><Button>Action</Button></td>
-                            <td><DeleteMyOrder
-                                myOrder={myOrder}
-                                refetch={refetch}
-                            ></DeleteMyOrder></td>
+                            <td>${myOrder.price}</td>
+                            <td>
+                                {(myOrder.price && !myOrder.paid) && <Link to={`/dashboard/payment/${myOrder._id}`}><Button size="sm">Pay Now</Button></Link>}
+                                {(myOrder.price && myOrder.paid) && <span className='text-success'>Paid (TID: {myOrder.transactionId})</span>}
+                            </td>
+                            <td>
+                                {!myOrder.paid && <DeleteMyOrder
+                                    myOrder={myOrder}
+                                    refetch={refetch}
+                                ></DeleteMyOrder>}
+                                {myOrder.paid && <span className='text-success'>Order Placed</span>}
+                            </td>
                         </tr>)
                     }
                 </tbody>
