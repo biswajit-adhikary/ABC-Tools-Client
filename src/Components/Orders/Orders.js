@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Table } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 import { useQuery } from 'react-query';
 import Loading from '../Loading/Loading';
 import DeleteAdminOrder from '../Modal/DeleteAdminOrder';
@@ -20,13 +20,6 @@ const Orders = () => {
     if (isLoading) {
         return <Loading />
     }
-
-    const handelStatus = event => {
-        event.preventDefault();
-
-    }
-
-
 
     return (
         <div>

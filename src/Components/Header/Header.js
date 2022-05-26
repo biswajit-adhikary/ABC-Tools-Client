@@ -55,7 +55,7 @@ const Header = () => {
                                 user
                                     ?
                                     <NavDropdown title="U" id="basic-nav-dropdown">
-                                        <Link className='dropdown-item' to="/dashboard/my-profile">My Profile</Link>
+                                        <Link className='dropdown-item' to="/dashboard">My Profile</Link>
                                     </NavDropdown>
                                     :
                                     ''
